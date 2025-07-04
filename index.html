@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Music Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-compact-disc"></i> Advanced Music Explorer</h1>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for music...">
+                <button id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+                <button id="clearBtn" aria-label="Clear Search"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="filter-options">
+                <span class="filter-label">Filter by:</span>
+                <button class="filter-btn active" data-entity="song">Tracks</button>
+                <button class="filter-btn" data-entity="album">Albums</button>
+                <button class="filter-btn" data-entity="artist">Artists</button>
+            </div>
+
+            <div id="statusMessage" class="status-message"></div>
+        </section>
+
+        <section class="results-section">
+            <div id="searchResults" class="results-grid">
+                <p class="placeholder-text">Start by searching for your favorite music!</p>
+            </div>
+            <button id="loadMoreBtn" class="load-more-btn hidden">Load More <i class="fas fa-angle-down"></i></button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Advanced Music Explorer</p>
+    </footer>
+
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modalBody" class="modal-body">
+                <div class="skeleton-modal-body">
+                    <div class="skeleton-img large"></div>
+                    <div class="skeleton-text skeleton-modal-title"></div>
+                    <div class="skeleton-text skeleton-modal-subtitle"></div>
+                    <div class="skeleton-text skeleton-modal-para"></div>
+                    <div class="skeleton-text skeleton-modal-para short"></div>
+                    <ul class="skeleton-list">
+                        <li><div class="skeleton-text"></div></li>
+                        <li><div class="skeleton-text"></div></li>
+                        <li><div class="skeleton-text"></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
